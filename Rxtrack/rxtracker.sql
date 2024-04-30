@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Apr 28, 2024 at 01:37 PM
+-- Generation Time: Apr 30, 2024 at 12:27 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -29,11 +29,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `datauser` (
   `id` int(10) NOT NULL,
-  `user` varchar(20) NOT NULL,
-  `pass` varchar(10) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `role` varchar(20) NOT NULL,
-  `email` varchar(20) NOT NULL,
+  `user` varchar(25) NOT NULL,
+  `pass` varchar(25) NOT NULL,
+  `name` varchar(25) NOT NULL,
+  `role` varchar(25) NOT NULL,
+  `email` varchar(25) NOT NULL,
   `tel` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -42,7 +42,8 @@ CREATE TABLE `datauser` (
 --
 
 INSERT INTO `datauser` (`id`, `user`, `pass`, `name`, `role`, `email`, `tel`) VALUES
-(1, 'risa', '0000', 'risa', 'admin', 'risa@gmail.com', 0);
+(1, 'risa', '0000', 'risa', 'admin', 'risa@gmail.com', 0),
+(2, 'rita', 'rita', 'rita', 'user', 'rita@gmail.com', 0);
 
 --
 -- Indexes for dumped tables
@@ -62,7 +63,7 @@ ALTER TABLE `datauser`
 -- AUTO_INCREMENT for table `datauser`
 --
 ALTER TABLE `datauser`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
