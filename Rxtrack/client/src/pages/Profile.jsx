@@ -84,7 +84,7 @@ function Profile() {
                 <td>{data.email}</td>
                 <td>{data.tel}</td>
                 <td>
-                  <Link to={"update/${data.id}"} className="btn btn-primary">
+                <Link to={`update/${data.id}`} className="btn btn-primary">
                     Update
                   </Link>
                   <button

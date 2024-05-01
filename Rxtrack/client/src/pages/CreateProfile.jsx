@@ -27,14 +27,14 @@ function CreateProfile() {
 
   return (
     <form
-      className="m-5 p-5 needs-validation"
+      className="m-5 p-5"
       onSubmit={handleSubmit}
       style={{
         backgroundColor: "white",
         borderRadius: "10px",
         border: "solid 1px #e8ebed",
       }}
-      noValidate
+      
     >
       <div className="row mb-3" style={{ margin:"2px"}}>
         
@@ -48,7 +48,7 @@ function CreateProfile() {
               setUser(event.target.value);
             }}
           />
-        <div className="invalid-feedback">กรุณากรอกชื่อผู้ใช้</div>
+       
           <label className="row mb3">รหัสผ่าน</label>
           <input
             type="password"
@@ -59,7 +59,7 @@ function CreateProfile() {
               setPass(event.target.value);
             }}
           />
-          <div className="invalid-feedback">กรุณากรอกรหัสผ่าน</div>
+          
 
 
           <label className="row mb3">ชื่อจริง</label>
@@ -72,7 +72,6 @@ function CreateProfile() {
               setName(event.target.value);
             }}
           />
-          <div className="invalid-feedback">กรุณากรอกชื่อ-นามสกุล</div>
 
       </div>
 
@@ -99,7 +98,7 @@ function CreateProfile() {
               setEmail(event.target.value);
             }}
           />
-          <div className="invalid-feedback">กรุณากรอกอีเมล</div>
+          
 
 
           <label className="row mb3">เบอร์มือถือ</label>
@@ -112,7 +111,7 @@ function CreateProfile() {
               setTel(event.target.value);
             }}
           />
-          <div className="invalid-feedback">กรุณากรอกเบอร์มือถือ</div>
+          
 
       </div>
       

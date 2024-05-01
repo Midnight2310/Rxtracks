@@ -66,20 +66,22 @@ function UpdateProfil() {
           className={`form-control `}
           placeholder="กรอกชื่อผู้ใช้"
           required
+          name="user"
           value={user.user}
           onChange={handdleInputChange}
         />
-        <div className="invalid-feedback">กรุณากรอกชื่อผู้ใช้</div>
+        
         <label>รหัสผ่าน</label>
         <input
           type="password"
           className={`form-control `}
           placeholder="กรอกรหัสผ่าน"
           required
+          name="pass"
           value={user.pass}
           onChange={handdleInputChange}
         />
-        <div className="invalid-feedback">กรุณากรอกรหัสผ่าน</div>
+       
 
         <label>ชื่อจริง</label>
         <input
@@ -87,15 +89,17 @@ function UpdateProfil() {
           className={`form-control `}
           placeholder="กรอกชื่อ-นามสกุล"
           required
+          name="name"
           value={user.name}
           onChange={handdleInputChange}
         />
-        <div className="invalid-feedback">กรุณากรอกชื่อ-นามสกุล</div>
+        
       </div>
 
       <label>ตำแหน่ง</label>
       <select
         className="form-control"
+        name="role"
         value={user.role}
         onChange={handdleInputChange}
       >
@@ -111,10 +115,11 @@ function UpdateProfil() {
           className={`form-control "}`}
           placeholder="email@email.com"
           required
+          name= "email"
           value={user.email}
           onChange={handdleInputChange}
         />
-        <div className="invalid-feedback">กรุณากรอกอีเมล</div>
+        
 
         <label>เบอร์มือถือ</label>
         <input
@@ -122,11 +127,12 @@ function UpdateProfil() {
           className={`form-control `}
           placeholder="xxx-xxx-xxxx"
           required
+          name = "tel"
           value={user.tel}
           onChange={handdleInputChange}
         />
-        <div className="invalid-feedback">กรุณากรอกเบอร์มือถือ</div>
-      </div>
+       
+      </div> 
       <button
         type="submit"
         className="btn btn-primary mt-3"
