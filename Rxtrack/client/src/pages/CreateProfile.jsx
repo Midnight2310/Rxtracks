@@ -14,6 +14,7 @@ function CreateProfile() {
     const [tel, setTel] = useState('')
     const navigate = useNavigate()
 
+    
     function handleSubmit (event) {
       event.preventDefault();
       Axios.post('http://localhost:3001/create', {user, pass, name, role, email, tel})
@@ -35,8 +36,9 @@ function CreateProfile() {
       }}
       noValidate
     >
-      <div className="row mb-3">
-          <label>ชื่อผู้ใช้</label>
+      <div className="row mb-3" style={{ margin:"2px"}}>
+        
+          <label className="row mb3">ชื่อผู้ใช้</label>
           <input
             type="text"
             className={`form-control `}
@@ -47,7 +49,7 @@ function CreateProfile() {
             }}
           />
         <div className="invalid-feedback">กรุณากรอกชื่อผู้ใช้</div>
-          <label>รหัสผ่าน</label>
+          <label className="row mb3">รหัสผ่าน</label>
           <input
             type="password"
             className={`form-control `}
@@ -60,7 +62,7 @@ function CreateProfile() {
           <div className="invalid-feedback">กรุณากรอกรหัสผ่าน</div>
 
 
-          <label>ชื่อจริง</label>
+          <label className="row mb3">ชื่อจริง</label>
           <input
             type="text"
             className={`form-control `}
@@ -74,19 +76,20 @@ function CreateProfile() {
 
       </div>
 
-      <label>ตำแหน่ง</label>
+      <label className="row mb3" style={{ margin:"2px"}}>ตำแหน่ง</label>
           <select className="form-control"
+          style={{ margin:"2px"}}
           onChange={(event) => {
             setRole(event.target.value);
           }}>
-            <option value="user">None</option>
+            <option value="none">None</option>
             <option value="user">User</option>
             <option value="admin">Admin</option>
           </select>
 
-      <div className="row mb-3">
+      <div className="row mb-3" style={{ margin:"2px"}}>
 
-          <label>อีเมล</label>
+          <label className="row mb3">อีเมล</label>
           <input
             type="email"
             className={`form-control "}`}
@@ -99,7 +102,7 @@ function CreateProfile() {
           <div className="invalid-feedback">กรุณากรอกอีเมล</div>
 
 
-          <label>เบอร์มือถือ</label>
+          <label className="row mb3">เบอร์มือถือ</label>
           <input
             type="text"
             className={`form-control `}
@@ -112,22 +115,25 @@ function CreateProfile() {
           <div className="invalid-feedback">กรุณากรอกเบอร์มือถือ</div>
 
       </div>
+      
+      <div style={{ textAlign: "center" }}>
       <button
         type="submit"
-        className="btn btn-primary mt-3"
+        className="btn btn-primary mt-3 mx3"
         style={{ width: "120px", height: "50px" }}
       >
         ยืนยัน
       </button>
-
+      
+      
       <Link to="/"
         type="button"
         className="btn btn-secondary mt-3 mx-3"
         style={{ width: "120px", height: "50px" }}
       >
-        ย้อนกลับ
+        ยกเลิก
       </Link>
-
+      </div>
     </form>
   );
 }

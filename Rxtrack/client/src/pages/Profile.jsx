@@ -9,6 +9,8 @@ function Profile() {
   const [curPage, setCurPage] = useState(0);
   const [numPages, setNumPages] = useState(0);
 
+  //กำหนดนห้าเเละจำนวนต่อpages
+
   useEffect(() => {
     setNumPages(Math.ceil(user.length / itemsPerPage));
   }, [user]); 
@@ -26,11 +28,13 @@ function Profile() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [numPages]);
 
+  
+
 
   //.thenใช้ในการส่งข้อมูล ...มช้ในการเพิ่มข้อมูลตัวใหม่เเละเก็บข้อมูลตัวเก่าไว้เพื่อไม่ให้ข้อมูลตัวเก่าถูกลบ
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/datauser")
+    Axios.get("http://localhost:3001/datausers")
       .then((res) => setUser(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -45,11 +49,13 @@ function Profile() {
    })
   };
 
+  
+
   return (
     <div>
       <div className=" bg-white ">
         <div style={{ textAlign: "right", padding: "1rem" }}>
-          <Link to="/create" className="btn btn-sm btn-primary">
+          <Link to="/create" className="btn btn-lg btn-primary">
             add
           </Link>
         </div>
@@ -70,7 +76,7 @@ function Profile() {
           <tbody style={{ textAlign: "left" }}>
             {user.map((data, i) => (
               <tr key={i}>
-                <td>{data.id}</td>
+                <td>{i + 1}</td>
                 <td>{data.user}</td>
                 <td>{data.pass}</td>
                 <td>{data.name}</td>
@@ -92,13 +98,8 @@ function Profile() {
             ))}
           </tbody>
         </table>
-        <button
-        className="btn btn-outline-primary button-spacing"
-        onClick={() => setCurPage(1)}
-        disabled={curPage === 1}
-      >
-        First
-      </button>
+        <form 
+       className="button-spacings" style={{textAlign: "right" }}>
       <button
         className="btn btn-outline-primary button-spacing"
         onClick={() => {
@@ -107,8 +108,10 @@ function Profile() {
         disabled={curPage === 1}
       >
         <i className="bi bi-arrow-left-short" ></i>
-      </button >
+      </button>
+      <span className="badge">
       {curPage} / {numPages}
+      </span>
       <button
         className="btn btn-outline-primary button-spacing"
         onClick={() => {
@@ -118,15 +121,7 @@ function Profile() {
       >
         <i className="bi bi-arrow-right"></i>
       </button>
-      <button
-        className="btn btn-outline-primary button-spacing"
-        onClick={() => {
-          setCurPage(numPages);
-        }}
-        disabled={curPage === numPages}
-      >
-        Last
-      </button>
+      </form>
       </div>
     </div>
   );

@@ -55,3 +55,16 @@ span.badge{
   color: #000000;
   font-size: 16px;
 }
+
+div.row{
+  display: flex;
+}
+
+input.form-contro{
+  width: 100%;
+  margin: 2rem;
+}
+
+link span{
+  text-align: center;
+}

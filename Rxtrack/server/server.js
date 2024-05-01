@@ -15,12 +15,27 @@ const db = mysql.createConnection({
   port: "3307",
 })
 
-app.get('/datauser', (req,res) => {
+app.get('/datausers', (req,res) => {
   db.query("SELECT * FROM datauser" , (err, result) => {
     if(err){
       console.log(err);
     }else{
       res.send(result);
+    }
+  });
+});
+
+app.get('/datauser/:id', (req,res) => {
+  const userId = req.params.id;
+  db.query("SELECT * FROM datauser WHERE id = ?",[userId] , (err, result) => {
+    if(err){
+      console.log(err);
+    }else{
+      if (result.length > 0) {
+        res.send(result[0])
+      }else {
+        res.send(result)
+      }
     }
   });
 });
